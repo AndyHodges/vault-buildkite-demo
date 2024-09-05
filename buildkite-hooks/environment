@@ -12,3 +12,4 @@ export VAULT_SECRET_ID=$(vault write -f -field "secret_id" auth/approle/role/bui
 
 
 
+
