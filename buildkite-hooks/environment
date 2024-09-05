@@ -10,3 +10,5 @@ export VAULT_ADDR="http://localhost:8200"
 export VAULT_ROLE_ID=$(vault read -field=role_id /auth/approle/role/buildkite/role-id)
 export VAULT_SECRET_ID=$(vault write -f -field "secret_id" auth/approle/role/buildkite/secret-id)
 
+
+
