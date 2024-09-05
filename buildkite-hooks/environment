@@ -1,6 +1,4 @@
-set -euo pipefail
 
-# This is configuration required for the vault server we are going to run
 echo "~~~ :buildkite: agent :vault: config"
 export VAULT_TOKEN="buildkite-is-cool"
 export VAULT_DEV_ROOT_TOKEN_ID="${VAULT_TOKEN}"
@@ -9,9 +7,5 @@ export VAULT_ADDR="http://localhost:8200"
 # This is where the agent will call vault to get the role ID and secret ID
 export VAULT_ROLE_ID=$(vault read -field=role_id /auth/approle/role/buildkite/role-id)
 export VAULT_SECRET_ID=$(vault write -f -field "secret_id" auth/approle/role/buildkite/secret-id)
-
-
-
-
 
 
